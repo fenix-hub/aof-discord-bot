@@ -39,13 +39,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         args = args.splice(1);
         switch(cmd) {
             // !ping
+/*
             case 'ping':
                 bot.sendMessage({
                     to: channelID,
                     message: 'Pong!'
                 });
             break;
-
+*/
+/*
             case 'benvenuto':
 	bot.deleteMessage({
 		channelID: channelID,
@@ -56,7 +58,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'Benvenuto nel server Discord di Age of Feuds!'
                 });
             break;
-
+*/
             case 'links':
                 bot.sendMessage({
                     to: channelID,
@@ -71,7 +73,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	});
                 bot.sendMessage({
                     to: channelID,
-                    message: ':mag_right: Lista dei miei comandi:\n`!links` ottieni tutti i nostri link \n`!stato` recupera lo stato del server\n`!comandi` lista dei comandi (questa)\n`!regole` elenco del regolamento delle nostre piattaforme\n`!assistenza` link per assistenza sul forum\n`!segnalazione` link per aprire una segnalazione sul forum'
+                    message: ':mag_right: Lista dei miei comandi:\n`!links` ottieni tutti i nostri link \n`!stato` recupera lo stato del server\n`!comandi` lista dei comandi (questa)\n`!regole` restituisce il regolamento delle nostre piattaforme\n`!regole_` restituisce il regolamento senza blocco di codice\n`!assistenza` link per assistenza sul forum\n`!segnalazione` link per aprire una segnalazione sul forum'
                 });
             break;
 
@@ -127,7 +129,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	  });
 	break;
 
-	case 'regolamentocompleto':
+	case 'regole_':
 	 bot.deleteMessage({
 	  channelID: channelID,
 	  messageID: evt.d.id
