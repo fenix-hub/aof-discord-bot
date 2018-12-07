@@ -28,9 +28,10 @@ bot.on('ready', function (evt) {
 bot.on('guildMemberAdd',member => {
 
   console.log("E' entrato l'utente " + member.nickname + " , ID: " + member.id);
+
   bot.addToRole({
     userID: member.id,
-    roleID: "520408058015383552"
+    roleID: 520408058015383552
   });
   bot.sendMessage({
     to: member.id,
@@ -191,10 +192,3 @@ bot.on('message', function (user, userID, channelID, message, evt) {
          }
      }
 });
-
-function addUserRole(roleName, message)
-{
-	var role = message.guild.roles.find('name',roleName);
-	message.member.addRole(role.id);
-	return;
-}
