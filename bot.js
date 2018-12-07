@@ -49,6 +49,14 @@ bot.on('message', function (user, userID, channelID, message, evt) {
       {
           if (message.toLowerCase() == "accetto"){
             console.log("Aggiungo l'utente "+user+" ["+userID+"] al ruolo Utente");
+
+
+            bot.removeFromRole({
+              serverID: "518884342051897346",
+              userID: userID,
+              roleID: "520408058015383552"
+            });
+
             bot.addToRole({
               serverID: "518884342051897346",
               userID: userID,
