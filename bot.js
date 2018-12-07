@@ -28,7 +28,10 @@ bot.on('ready', function (evt) {
 bot.on('guildMemberAdd',member => {
 
   console.log("E' entrato l'utente " + member.nickname + " , ID: " + member.id);
-  member.addRole("Nuovo Utente");
+  bot.addToRole({
+    userID: member.id,
+    roleID: "520603668450377758"
+  });
   bot.sendMessage({
     to: member.id,
     message: "Benvenuto nel server Discord di Age of Feuds! Visita il canale **benvenuto_su_aof** per diventare un Utente!"
