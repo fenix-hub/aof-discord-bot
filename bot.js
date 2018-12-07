@@ -68,14 +68,14 @@ bot.removeFromRole({
               channelID: channelID,
               messageID: evt.d.id
             });
-          }
+
 
           bot.sendMessage({
             to: userID,
             message: "Sei diventato ufficialmente un **Utente** del nostro Discord! \nUtilizza il comando `!comandi` per imparare ad usarmi."
           });
-
-      }
+        }
+  }
 
 
         // Our bot needs to know if it will execute a command
