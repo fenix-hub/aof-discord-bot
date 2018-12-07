@@ -131,7 +131,7 @@ bot.removeFromRole({
   	else
   	{
     	console.log("Server is offline!");
-	status = "Il server e' offline";
+	status = "**Stato:** `Offline` :no_entry_sign:";
                 bot.sendMessage({
                     to: channelID,
                     message: status
