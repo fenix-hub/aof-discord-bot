@@ -35,7 +35,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
-       
+
         args = args.splice(1);
         switch(cmd) {
             // !ping
@@ -74,7 +74,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: ':mag_right: Lista dei miei comandi:\n`!links` ottieni tutti i nostri link \n`!stato` recupera lo stato del server\n`!comandi` lista dei comandi (questa)\n`!regole` elenco del regolamento delle nostre piattaforme\n`!assistenza` link per assistenza sul forum\n`!segnalazione` link per aprire una segnalazione sul forum'
                 });
             break;
-            
+
             case 'stato':
 	bot.deleteMessage({
 		channelID: channelID,
@@ -105,7 +105,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
   	}
 	});
-            break;            
+            break;
 
             case 'stop':
 	bot.deleteMessage({
@@ -148,7 +148,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	  message: ":pencil: **Clicka qui per ottenere assistenza!** :pencil:: http://www.ageoffeuds-forum.it/forums/assistenza.42/"
 	  });
 	break;
-            
+
 	case 'segnalazione':
 	 bot.deleteMessage({
 	  channelID: channelID,
@@ -168,3 +168,4 @@ function addUserRole(roleName, message)
 	var role = message.guild.roles.find('name',roleName);
 	message.member.addRole(role.id);
 	return;
+}
