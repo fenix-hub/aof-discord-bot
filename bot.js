@@ -11,20 +11,23 @@ logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
     colorize: true
 });
+
 logger.level = 'debug';
 // Initialize Discord Bot
 var bot = new Discord.Client({
    token: auth.token,
    autorun: true
 });
+
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
+
 bot.on('guildMemberAdd',member => {
-	addUserRole('Nuovo Utente', message);
-	member.send("Benvenuto nel server Discord di Age of Feuds! Visita il canale **benvenuto-su-aof** per diventare un Utente!")
+
+	member.send("Benvenuto nel server Discord di Age of Feuds! Visita il canale **benvenuto_su_aof** per diventare un Utente!")
 
 });
 
@@ -47,6 +50,18 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             break;
 */
+
+  if (message.channel.name == "benvenuto_su_aof")
+  {
+    if (message.content.toLowerCase() == "accetto"){
+      addUserRole('Nuovo Utente', message);
+      bot.deleteMessage({
+        channelID: channelID,
+        messageID: evt.d.id
+      });
+    }
+
+  }
 /*
             case 'benvenuto':
 	bot.deleteMessage({
