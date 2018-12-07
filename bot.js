@@ -34,6 +34,7 @@ bot.on('guildMemberAdd',member => {
     userID: member.id,
     roleID: "520408058015383552"
   });
+
   bot.sendMessage({
     to: member.id,
     message: "Benvenuto nel server Discord di Age of Feuds! Visita il canale **benvenuto_su_aof** per diventare un Utente!"
@@ -47,7 +48,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.channelID == "518933032653029397")
         {
           if (message.content.toLowerCase() == "accetto"){
-            addUserRole('Nuovo Utente', message);
+            bot.addToRole({
+              serverID: "518884342051897346",
+              userID: userID,
+              roleID: "518902446588952596"
+            });
+
             bot.deleteMessage({
               channelID: channelID,
               messageID: evt.d.id
