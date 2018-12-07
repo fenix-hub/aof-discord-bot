@@ -173,11 +173,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	  message: ":no_entry: **Clicka qui per fare una segnalazione!** :no_entry:: http://www.ageoffeuds-forum.it/forums/segnalazioni.39/"
 	  });
 	break;
-         }
-     }
 
-
-//Comando interno per il messaggio di Accettazione
+  //Comando interno per il messaggio di Accettazione
   case 'accettazione_!':
 
     bot.sendMessage({
@@ -185,4 +182,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
       message: "Scrivi `accetto` / `ACCETTO` / `Accetto` per accettare il regolamento e diventare un **Utente** ufficiale. :grinning:"
     })
   break;
+
+
+
+         }
+     }
+
+     /////////////////
 });
