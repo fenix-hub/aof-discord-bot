@@ -48,6 +48,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (channelID == "518933032653029397")
       {
           if (message.toLowerCase() == "accetto"){
+            console.log("Aggiungo l'utente "+user+" ["+userID+"] al ruolo Utente");
             bot.addToRole({
               serverID: "518884342051897346",
               userID: userID,
@@ -62,7 +63,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
           bot.sendMessage({
             to: userID,
-            message: "Sei diventato ufficialmente un **Utente** del nostro Discord! \n Utilizza il comando `!comandi` per imparare ad usarmi."
+            message: "Sei diventato ufficialmente un **Utente** del nostro Discord! \nUtilizza il comando `!comandi` per imparare ad usarmi."
           });
 
       }
