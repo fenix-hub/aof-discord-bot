@@ -23,18 +23,8 @@ bot.on('ready', function (evt) {
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
 bot.on('guildMemberAdd',member => {
-	bot.sendMessage({
-	channelID: '518933032653029397',
-	message: 'Ciao @'+ member.nickname + ', Benvenuto nel server Discord di Age of Feuds!'
-	});
-	bot.sendMessage({
-	channelID: '518933032653029397',
-	message: '!regole'
-	});
-	bot.sendMessage({
-	channelID: '518933032653029397',
-	message: 'Per accettare il regolamento e diventare un Utente, scrivi "Accetto"'
-	});
+	addUserRole('Nuovo Utente', message);
+	member.send("Benvenuto nel server Discord di Age of Feuds! Visita il canale **benvenuto-su-aof** per diventare un Utente!")
 
 });
 
@@ -137,6 +127,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	  });
 	break;
 
+	case 'regolamentocompleto':
+	 bot.deleteMessage({
+	  channelID: channelID,
+	  messageID: evt.d.id
+	  });
+	 bot.sendMessage({
+	  to: channelID,
+	  message: ":scroll: _Il nostro regolamento_ :scroll:\n\n**1) LINGUAGGIO** \nE' vietato bestemmiare (da 12h a perma), insultare (da 5h a perma) e utilizzare riferimenti non consoni (da 1h a perma) (sesso, droga, politica, religione)\n\n**2) PROFILO**\nIl nickname deve essere sempre lo stesso che avete in game, in modo tale che lo Staff possa riconoscervi. (da 5m a 24h)\nE' vietato inserirne uno falso o che vi renda irriconoscibili. (da 10m a 48h)\nE' vietato usare una foto profilo che violi una o piu' regole (come riferimenti non consoni) (da 20m a perma)\n\n**3) SPAM - FLOOD**\nE' vietato divulgare, spammare o anche solo citare il nome o l'ip di server Minecraft estranei ad AoF. (da 1h a perma)\n\n**4) DISTURBO**\nE' vietato scrivere troppi messaggi in un ristretto lasso di tempo, con lo scopo di intasare la chat o infastidire (da 10m a perma), cosi' come e' vietato procurare disturbo attraverso Music Bot, urla...ecc. (da 1h a perma)\n\n**5) DIVULGAZIONE**\nE' assolutamente vietato divulgare (da 24h a perma), attraverso qualsiasi mezzo di comunicazio e dati personali di una o piu' persone, senza l'autorizzazione dei diretti interessati.\n\n**6) DENIGRAZIONE**\nE' vietata qualunque forma di denigrazione nei confronti del server, della community o di qualunque piattaforma di AgeOfFeuds. (da 2d a perma)\nPer denigrazione si intende un qualunque riferimento atto a sminuire AgeOfFeuds e affini.\nE' vietato insultare o denigrare lo Staff o le attivita' da esso svolte. (da 24h a perma)\nSono vietati atteggiamenti esibizionisti atti a minare la credibilita' del server o che scoraggino la permanenza di altri giocatori (es. 'Lascio il server, ora chiudete senza di me') (da 1h a 72h)\n\n**7) MULTIACCOUNT**\nE' vietato accedere a qualunque piattaforma tramite un secondo account se si e' stati bannati con un altro profilo._ (perma)\n\n**8) ABUSO DI POTERE**\nViolazione di una o piu' regole del server da parte di un membro dello Staff. (probabile rimozione della targhetta + eventuale ban in base ai casi)"
+	  });
+	break;
+
 	case 'assistenza':
 	 bot.deleteMessage({
 	  channelID: channelID,
@@ -161,3 +162,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
          }
      }
 });
+
+function addUserRole(roleName, message)
+{
+	var role = message.guild.roles.find('name',roleName);
+	message.member.addRole(role.id);
+	return;
