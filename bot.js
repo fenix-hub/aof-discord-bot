@@ -45,7 +45,7 @@ bot.on('guildMemberAdd',member => {
 bot.on('message', function (user, userID, channelID, message, evt) {
 
 //Accettazione nuovi membri
-    if (message.channelID == "518933032653029397")
+    if (channelID == "518933032653029397")
       {
           if (message.toLowerCase() == "accetto"){
             bot.addToRole({
