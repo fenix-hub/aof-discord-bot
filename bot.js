@@ -27,7 +27,10 @@ bot.on('ready', function (evt) {
 
 bot.on('guildMemberAdd',member => {
 
-	member.send("Benvenuto nel server Discord di Age of Feuds! Visita il canale **benvenuto_su_aof** per diventare un Utente!")
+  bot.sendMessage({
+    userID: member.id,
+    message: "Benvenuto nel server Discord di Age of Feuds! Visita il canale **benvenuto_su_aof** per diventare un Utente!"
+  });
 
 });
 
