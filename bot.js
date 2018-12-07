@@ -47,7 +47,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 //Accettazione nuovi membri
     if (message.channelID == "518933032653029397")
       {
-          if (message.content.toLowerCase() == "accetto"){
+          if (message.toLowerCase() == "accetto"){
             bot.addToRole({
               serverID: "518884342051897346",
               userID: userID,
