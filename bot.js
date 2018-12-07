@@ -32,9 +32,23 @@ bot.on('guildMemberAdd',member => {
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`
 
+//Accettazione nuovi membri
+    if (message.channel.name == "benvenuto_su_aof")
+        {
+          if (message.content.toLowerCase() == "accetto"){
+            addUserRole('Nuovo Utente', message);
+            bot.deleteMessage({
+              channelID: channelID,
+              messageID: evt.d.id
+            });
+          }
+
+        }
+
+
+        // Our bot needs to know if it will execute a command
+        // It will listen for messages that will start with `!`
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
@@ -51,17 +65,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
 */
 
-  if (message.channel.name == "benvenuto_su_aof")
-  {
-    if (message.content.toLowerCase() == "accetto"){
-      addUserRole('Nuovo Utente', message);
-      bot.deleteMessage({
-        channelID: channelID,
-        messageID: evt.d.id
-      });
-    }
 
-  }
 /*
             case 'benvenuto':
 	bot.deleteMessage({
