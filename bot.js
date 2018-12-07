@@ -22,6 +22,22 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
+bot.on('guildMemberAdd',member => {
+	bot.sendMessage({
+	channelID: '518933032653029397',
+	message: 'Ciao @'+ member.nickname + ', Benvenuto nel server Discord di Age of Feuds!'
+	});
+	bot.sendMessage({
+	channelID: '518933032653029397',
+	message: '!regole'
+	});
+	bot.sendMessage({
+	channelID: '518933032653029397',
+	message: 'Per accettare il regolamento e diventare un Utente, scrivi "Accetto"'
+	});
+
+});
+
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
