@@ -32,51 +32,17 @@ bot.on('guildMemberAdd',member => {
   bot.addToRole({
     serverID: "518884342051897346",
     userID: member.id,
-    roleID: "520408058015383552"
+    roleID: "518902446588952596"
   });
 
   bot.sendMessage({
     to: member.id,
-    message: "Benvenuto nel server Discord di Age of Feuds! Visita il canale **benvenuto_su_aof** per diventare un Utente!"
+    message: "Benvenuto nel server Discord di Age of Feuds! Se riscontri problemi, contatta lo staff in privato o nei canli appositi."
   });
 
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-
-//Accettazione nuovi membri
-    if (channelID == "518933032653029397")
-      {
-          if (message.toLowerCase() == "accetto"){
-            console.log("Aggiungo l'utente "+user+" ["+userID+"] al ruolo Utente");
-
-//Aggiungo ad Utente
-            bot.addToRole({
-              serverID: "518884342051897346",
-              userID: userID,
-              roleID: "518902446588952596"
-            });
-
-//Rimuovo da Nuovo utente
-bot.removeFromRole({
-  serverID: "518884342051897346",
-  userID: userID,
-  roleID: "520408058015383552"
-});
-
-            bot.deleteMessage({
-              channelID: channelID,
-              messageID: evt.d.id
-            });
-
-
-          bot.sendMessage({
-            to: userID,
-            message: "Sei diventato ufficialmente un **Utente** del nostro Discord! \nUtilizza il comando `!comandi` per imparare ad usarmi."
-          });
-        }
-  }
-
 
         // Our bot needs to know if it will execute a command
         // It will listen for messages that will start with `!`
