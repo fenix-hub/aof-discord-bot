@@ -152,10 +152,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
 //Interfaccia pancacke per la musica di Calogero
   case 'musica':
-    bot.sendMessage({
-      to: channelID,
-      message: "p!join"
-    })
 
     bot.deleteMessage({
       channelID: channelID,
@@ -164,7 +160,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
     bot.sendMessage({
       to: channelID,
-      message: "E' entrato Calogero, il bot Musicale! Utilizza il comando `p!search <nome>` per cercare una canzone o un artista, e `p!play <nome>` per scegliere la canzone che Calogero deve riprodurre."
+      message: "Per fare entrare Calogero, il bot musicale, utilizza il comando `p!join`.\nUtilizza il comando `p!search <nome>` inserendo al posto del campo `<nome>` una canzone o un artista (es. `p!search Adriano Celentano`); e `p!play <nome>` per scegliere la canzone che Calogero deve riprodurre, inserendo al posto del campo `<nome>` la canzone da riprodurre (es. `p!play Il ragazzo della via Gluck`)."
     })
 
   break;
