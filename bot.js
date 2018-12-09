@@ -150,6 +150,27 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	  });
 	break;
 
+//Interfaccia pancacke per la musica di Calogero
+  case 'musica':
+    bot.sendMesage({
+      to: channelID,
+      message: "p!join"
+    })
+
+    bot.deleteMessage({
+      channelID: channelID,
+      messageID: evt.d.id
+    })
+
+    bot.sendMesage({
+      to: channelID,
+      message: "E' entrato Calogero, il bot Musicale! Utilizza il comando `p!search <nome>` per cercare una canzone o un artista, e `p!play <nome>` per scegliere la canzone che Calogero deve riprodurre."
+    })
+
+    break;
+
+
+
   //Comando interno per il messaggio di Accettazione
   case 'accettazione_!':
 
