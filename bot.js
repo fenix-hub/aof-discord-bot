@@ -72,7 +72,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
                 bot.sendMessage({
                     to: channelID,
-                    message: ':mag_right: Lista dei miei comandi:\n`!links` ottieni tutti i nostri link \n`!stato` recupera lo stato del server\n`!comandi` lista dei comandi (questa)\n`!regole` restituisce il regolamento delle nostre piattaforme\n`!regole_` restituisce il regolamento senza blocco di codice\n`!assistenza` link per assistenza sul forum\n`!segnalazione` link per aprire una segnalazione sul forum'
+                    message: ':mag_right: Lista dei miei comandi:\n`!links` ottieni tutti i nostri link \n`!stato` recupera lo stato del server\n`!comandi` lista dei comandi (questa)\n`!regole` restituisce il regolamento delle nostre piattaforme\n`!regole_` restituisce il regolamento senza blocco di codice\n`!assistenza` link per assistenza sul forum\n`!segnalazione` link per aprire una segnalazione sul forum\n`!musica` interagisci con Calogero per la musica'
                 });
             break;
 
@@ -152,7 +152,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
 //Interfaccia pancacke per la musica di Calogero
   case 'musica':
-    bot.sendMesage({
+    bot.sendMessage({
       to: channelID,
       message: "p!join"
     })
@@ -162,12 +162,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
       messageID: evt.d.id
     })
 
-    bot.sendMesage({
+    bot.sendMessage({
       to: channelID,
       message: "E' entrato Calogero, il bot Musicale! Utilizza il comando `p!search <nome>` per cercare una canzone o un artista, e `p!play <nome>` per scegliere la canzone che Calogero deve riprodurre."
     })
 
-    break;
+  break;
 
 
 
