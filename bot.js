@@ -37,7 +37,7 @@ bot.on('guildMemberAdd',member => {
 
   bot.sendMessage({
     to: member.id,
-    message: "Benvenuto nel server Discord di Age of Feuds! Se riscontri problemi, contatta lo staff in privato o nei canli appositi."
+    message: "Benvenuto nel server Discord di Age of Feuds! Se riscontri problemi, contatta lo staff in privato o nei canali appositi."
   });
 
 });
