@@ -4,8 +4,6 @@ var auth = require('./auth.json');
 var ms = require('./minestat');
 //Minecraft utilities
 var request = require('request');
-var mcIP = '185.25.206.71'; // Your MC server IP
-var mcPort = 25566; // Your MC server port
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
