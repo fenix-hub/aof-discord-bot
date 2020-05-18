@@ -28,7 +28,7 @@ bot.on('guildMemberAdd',member => {
   console.log("E' entrato l'utente " + member.nickname + " , ID: " + member.id);
 
   bot.addToRole({
-    serverID: "518884342051897346",
+
     userID: member.id,
     roleID: "518902446588952596"
   });
